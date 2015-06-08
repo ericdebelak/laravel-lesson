@@ -31,4 +31,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+
+	// DEFINE RELATIONSHIPS --------------------------------------------------
+	// each user has one profile
+	public function profile()
+	{
+		return $this->hasOne('Profile');
+	}
+
+
 }

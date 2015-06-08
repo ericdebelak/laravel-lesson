@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
+
+Route::get('profile', array('as' => 'profile', 'uses' => 'ProfileController@index'));
+Route::get('profile/edit', 'ProfileController@edit');
+Route::post('profile/update', array('as' => 'profile.update', 'uses' => 'ProfileController@update'));
 
 Route::get('home', 'HomeController@index');
 
